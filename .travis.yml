@@ -1,0 +1,35 @@
+language: node_js
+
+os:
+  - osx
+
+node_js:
+  - "6"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_script:
+  - cd dist
+  - git init
+  - git config --global user.name 'xLsDg'
+  - git config --global user.email 'xlsdg@qq.com'
+  - git add .
+  - git commit -m "Update demo"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+
+env:
+  global:
+    - GH_REF: github.com/xlsdg/vue-echarts-v3-demo.git
+    - secure: "gsaKX/Gv19RisjDOzZ7sfhPff2JzEV7gmttm6O66jYg2w0kjW5U41OZcbvvMfhOvJ0rJUH+BmxOSB8voMX/Px/ORQ68o13uG/vSKpBZKe3l/YkEUhDpma5Y0wkQDn19bGooXbHGvIuzMgk5QCa/u+gA6yOQYfn2yaeUAI1dtt+1BL7rW+PlXNVd0JJUH12A5+uqcB1VznGOfGItbJ3boxlx5PS72xRE1eDAlxzami1msBowTQpfgSjRQ7/3fsSJJcG6NchRDJRgdZZ5Py+aZSxN09ZYS5r69f8E1xMBuZ4zj4KJ/Wq660qF8tjsJml5rNG+1/Tt2Z5j6AcL5aDV0y2oVoy6JNHS+6L1r463heijiSMvNrZmH+KJJQ5q1X3UAOvcyTJrUxXNNE99v4XSss8MrXHHVSQUKn7T/MIOn3rG92q8Ayyml5vUtWK2UAx378KBlLjMizWdDPmawF//a20lSaf3oCbmlgaETrh00/aTkUB26FSsZ0l0xT9kJmLtosdBmI3/L3mDdbQc3ILw93Yzf4ZOwS5GDupc0YmiN74T3ropPnexW4sKkH0V+DODLktHgvu31dk82lyH5AHowvn9IRkGcL8DLDBan36QcZswGB/X3CCah+GsTaNBaO6sc9eySDzRLkbpclFwwyWfXclpXzJqsVAy00fqx5tgczxI="
