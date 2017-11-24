@@ -1,6 +1,6 @@
 <template>
   <div class="echarts">
-    <h2><router-link to="/">返回首页</router-link></h2>
+    <h2><router-link to="/">Go Back</router-link></h2>
     <IEcharts
       :option="option"
       @ready="onReady"
