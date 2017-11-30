@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import IEcharts from 'vue-echarts-v3/src/full.js'
+  import IEcharts from 'vue-echarts-v3'
 
   export default {
     name: 'view',
