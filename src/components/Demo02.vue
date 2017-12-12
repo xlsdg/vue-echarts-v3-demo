@@ -22,7 +22,7 @@
   IEcharts.registerMap('world', World)
 
   export default {
-    name: 'view',
+    name: 'Demo02',
     components: {
       IEcharts
     },

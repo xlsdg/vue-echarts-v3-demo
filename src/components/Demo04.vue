@@ -23,7 +23,7 @@ import 'echarts-wordcloud'
 // Vue.use(IEcharts)
 // console.log(IEcharts)
 export default {
-  name: 'view',
+  name: 'Demo04',
   components: {
     IEcharts
   },

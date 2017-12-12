@@ -12,7 +12,7 @@
   import IEcharts from 'vue-echarts-v3'
 
   export default {
-    name: 'view',
+    name: 'Demo03',
     components: {
       IEcharts
     },
