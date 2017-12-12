@@ -1,23 +1,24 @@
 <template>
   <div class="echarts">
     <h2><router-link to="/">Go Back</router-link></h2>
+    <div>
+      <button @click="doLoading">Random</button>
+    </div>
     <div class="echart" :style="style">
       <IEcharts
         :option="bar"
         :loading="loading"
         :resizable="true"
         @ready="onReady"
+        @resize="onResize"
         @click="onClick"
       />
-    </div>
-    <div>
-      <button @click="doLoading">Random</button>
     </div>
   </div>
 </template>
 
 <script>
-  import IEcharts from 'vue-echarts-v3'
+  import IEcharts from 'vue-echarts-v3/src/full.js'
 
   export default {
     name: 'Demo05',
@@ -59,6 +60,9 @@
       },
       onReady (ins) {
         console.dir(ins)
+      },
+      onResize (width, height) {
+        console.log(width, height)
       },
       onClick (event, instance, echarts) {
         console.log(arguments)
