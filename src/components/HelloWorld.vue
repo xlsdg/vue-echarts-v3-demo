@@ -8,6 +8,7 @@
       <li><router-link to="/demo03">Demo 03</router-link></li>
       <li><router-link to="/demo04">Demo 04</router-link></li>
       <li><router-link to="/demo05">Demo 05</router-link></li>
+      <li><router-link to="/demo06">Demo 06</router-link></li>
     </ul>
   </div>
 </template>
